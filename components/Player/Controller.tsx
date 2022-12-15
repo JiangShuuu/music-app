@@ -15,25 +15,25 @@ export default function Controller() {
       {/* icons */}
       <div className="flex-center space-x-4">
         <Button>
-          <FaRandom />
+          <FaRandom className="w-5 h-5" />
         </Button>
         <Button>
-          <AiFillStepBackward />
+          <AiFillStepBackward className="w-5 h-5" />
         </Button>
         <Button>
-          <HiOutlineArrowUturnLeft />
+          <HiOutlineArrowUturnLeft className="w-5 h-5" />
         </Button>
         <Player>
           <FiPauseCircle className="w-10 h-10" />
         </Player>
         <Button>
-          <HiOutlineArrowUturnRight />
+          <HiOutlineArrowUturnRight className="w-5 h-5" />
         </Button>
         <Button>
-          <AiFillStepForward />
+          <AiFillStepForward className="w-5 h-5" />
         </Button>
         <Button>
-          <BiRepeat className="rotate-180" />
+          <BiRepeat className="rotate-180 w-5 h-5" />
         </Button>
       </div>
       {/* process */}
