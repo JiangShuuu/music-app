@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { FiPlusCircle } from 'react-icons/fi'
 import Controller from './Controller'
+import Volume from './Volume'
 
 export default function Player() {
   return (
@@ -32,7 +33,7 @@ export default function Player() {
       {/* 播放器 */}
       <Controller />
       {/* 集數細項 */}
-      <div className="w-full border">123s</div>
+      <Volume />
     </div>
   )
 }
