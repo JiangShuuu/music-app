@@ -10,6 +10,15 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <p className='text-red'>12323</p>
+      <p className='text-red'>12323</p>
+      <p className='text-red'>12323</p>
+      <p className='text-red'>12323</p>
+      <p className='text-red'>12323</p>
+      <p className='text-red'>12323</p>
+      <p className='text-red'>12323</p>
+      <p className='text-red'>12323</p>
+      <p className='text-red'>12323</p>
+      <p className='text-red'>12323</p>
     </div>
   );
 }
