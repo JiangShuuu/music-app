@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { FiPauseCircle } from 'react-icons/fi'
 import {
@@ -9,9 +9,30 @@ import { AiFillStepForward, AiFillStepBackward } from 'react-icons/ai'
 import { FaRandom } from 'react-icons/fa'
 import { BiRepeat } from 'react-icons/bi'
 
+import Slider from '@mui/material/Slider'
+import { useTheme } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+
 export default function Controller() {
+  const theme = useTheme()
+  const duration = 200 // seconds
+  const [position, setPosition] = React.useState(32)
+
+  function formatDuration(value: number) {
+    const minute = Math.floor(value / 60)
+    const secondLeft = value - minute * 60
+    return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`
+  }
+
+  const TinyText = styled(Typography)({
+    fontSize: '0.75rem',
+    opacity: 0.38,
+    fontWeight: 500,
+    letterSpacing: 0.2,
+  })
+
   return (
-    <div className="flex-center w-full h-full">
+    <div className="flex-center flex-col w-full h-full">
       {/* icons */}
       <div className="flex-center space-x-4">
         <Button>
@@ -37,6 +58,47 @@ export default function Controller() {
         </Button>
       </div>
       {/* process */}
+      <div className="relative w-full">
+        <Slider
+          aria-label="time-indicator"
+          size="small"
+          value={position}
+          min={0}
+          step={1}
+          max={duration}
+          onChange={(_, value) => setPosition(value as number)}
+          sx={{
+            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+            height: 4,
+            '& .MuiSlider-thumb': {
+              width: 8,
+              height: 8,
+              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+              '&:before': {
+                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
+              },
+              '&:hover, &.Mui-focusVisible': {
+                boxShadow: `0px 0px 0px 8px ${
+                  theme.palette.mode === 'dark'
+                    ? 'rgb(255 255 255 / 16%)'
+                    : 'rgb(0 0 0 / 16%)'
+                }`,
+              },
+              '&.Mui-active': {
+                width: 20,
+                height: 20,
+              },
+            },
+            '& .MuiSlider-rail': {
+              opacity: 0.28,
+            },
+          }}
+        />
+        <div className="flex text-sm w-full items-center justify-between absolute top-5">
+          <p>{formatDuration(position)}</p>
+          <p>-{formatDuration(duration - position)}</p>
+        </div>
+      </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import Controller from './Controller'
 
 export default function Player() {
   return (
-    <div className="bottom-0 fixed flex items-center justify-between bg-blue border w-full h-20">
+    <div className="bottom-0 fixed flex items-center justify-between bg-blue border w-full h-28">
       {/* 專輯資訊 */}
       <div className="flex-center space-x-4 w-full ">
         <Image
