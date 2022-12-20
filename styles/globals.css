@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  .btn-ani {
+    @apply transition duration-200 ease-out;
+  }
   .flex-center {
     @apply flex items-center justify-center;
   }
