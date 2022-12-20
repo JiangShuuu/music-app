@@ -6,9 +6,9 @@ import Volume from './Volume'
 
 export default function Player() {
   return (
-    <div className="bottom-0 fixed flex items-center justify-between bg-blue border w-full h-28">
+    <div className="fixed bottom-0 flex items-center justify-between w-full bg-black-primary h-28">
       {/* 專輯資訊 */}
-      <div className="flex-center space-x-4 w-full ">
+      <div className="w-full space-x-4 flex-center ">
         <Image
           width={0}
           height={0}
@@ -21,14 +21,14 @@ export default function Player() {
           className="w-14 h-14"
         />
         <div className="text-white">
-          <p className="font-bold line-clamp line-clamp-1 w-64">
+          <p className="w-64 font-bold line-clamp line-clamp-1">
             EP00 | 嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨
             嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨
             嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨 ft. xxx
           </p>
           <p className="text-xs">天天天</p>
         </div>
-        <FiPlusCircle className="text-white/80 cursor-pointer hover:text-white text-lg duration-300 ease-in-out" />
+        <FiPlusCircle className="text-lg duration-300 ease-in-out cursor-pointer text-white/80 hover:text-white" />
       </div>
       {/* 播放器 */}
       <Controller />

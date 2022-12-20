@@ -7,14 +7,14 @@ import { useTheme } from '@mui/material/styles'
 export default function Volume() {
   const theme = useTheme()
   return (
-    <div className="w-full flex items-center justify-center">
-      <div className="w-56 flex items-center space-x-2">
+    <div className="flex items-center justify-center w-full">
+      <div className="flex items-center w-56 space-x-2">
         <VolumeDownRounded />
         <Slider
           aria-label="Volume"
           defaultValue={30}
           sx={{
-            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+            color: '#fff',
             '& .MuiSlider-track': {
               border: 'none',
             },

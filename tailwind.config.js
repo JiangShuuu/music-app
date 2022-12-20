@@ -27,7 +27,7 @@ module.exports = {
         },
         black: {
           DEFAULT: '#000000',
-          primary: '#1e170f',
+          primary: '#181818',
           shallower: '#444444',
         },
         white: {

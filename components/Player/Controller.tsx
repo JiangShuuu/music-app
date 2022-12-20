@@ -32,9 +32,9 @@ export default function Controller() {
   })
 
   return (
-    <div className="flex-center flex-col w-full h-full">
+    <div className="flex-col w-full h-full flex-center">
       {/* icons */}
-      <div className="flex-center space-x-4">
+      <div className="space-x-4 flex-center">
         <Button>
           <FaRandom className="w-5 h-5" />
         </Button>
@@ -54,7 +54,7 @@ export default function Controller() {
           <AiFillStepForward className="w-5 h-5" />
         </Button>
         <Button>
-          <BiRepeat className="rotate-180 w-5 h-5" />
+          <BiRepeat className="w-5 h-5 rotate-180" />
         </Button>
       </div>
       {/* process */}
@@ -68,14 +68,14 @@ export default function Controller() {
           max={duration}
           onChange={(_, value) => setPosition(value as number)}
           sx={{
-            color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
+            color: '#ffffff',
             height: 4,
             '& .MuiSlider-thumb': {
               width: 8,
               height: 8,
               transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
               '&:before': {
-                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
+                boxShadow: '0 2px 12px 0 #ffffff66',
               },
               '&:hover, &.Mui-focusVisible': {
                 boxShadow: `0px 0px 0px 8px ${
@@ -94,7 +94,7 @@ export default function Controller() {
             },
           }}
         />
-        <div className="flex text-sm w-full items-center justify-between absolute top-5">
+        <div className="absolute flex items-center justify-between w-full text-sm top-5">
           <p>{formatDuration(position)}</p>
           <p>-{formatDuration(duration - position)}</p>
         </div>
