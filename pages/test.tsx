@@ -53,7 +53,7 @@ export default function Test() {
   }
 
   return (
-    <div>
+    <div className="px-10 space-y-4">
       <h1>test</h1>
       {!token ? (
         <Link
@@ -66,15 +66,26 @@ export default function Test() {
       )}
       {/* search */}
       <form onSubmit={searchArtists}>
-        <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-        <button type={'submit'}>Search</button>
+        <input
+          type="text"
+          className="mr-4 border-2"
+          onChange={(e) => setSearchKey(e.target.value)}
+        />
+        <button type={'submit'} className="px-2 border">
+          Search
+        </button>
       </form>
 
       {artists &&
         artists.map((artist: any) => (
           <div key={artist.id}>
             {artist.images.length ? (
-              <img width={'100%'} src={artist.images[0].url} alt="img" />
+              <div className="flex flex-wrap w-full overflow-hidden">
+                <div className="basis-1/4">
+                  <img width={'80%'} src={artist.images[0].url} alt="img" />
+                </div>
+                <p className="w-20 basis-3/4">{JSON.stringify(artist)}</p>
+              </div>
             ) : (
               <div>No Image</div>
             )}
