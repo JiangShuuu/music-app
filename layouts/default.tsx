@@ -15,7 +15,7 @@ export default function Layout({ children }: Props) {
           {/* sidebar */}
           <SideBar />
           {/* content */}
-          <div className="w-full h-screen my-14">{children}</div>
+          <div className="w-full h-screen">{children}</div>
         </div>
         {/* player */}
         <Player />

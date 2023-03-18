@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Card from '~/components/Global/Card'
+import Header from '~/components/Index/Header'
 
 export default function Home() {
   return (
@@ -10,10 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="flex space-x-4">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Header />
       </section>
     </div>
   )
